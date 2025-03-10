@@ -34,7 +34,9 @@
                     if (file.type === "file") {
                         const li = document.createElement("li");
                         const a = document.createElement("a");
-                        a.href = file.download_url;
+                        
+                        // Direct raw GitHub content link
+                        a.href = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/${branch}/${contentsFolder}/${file.name}`;
                         a.textContent = file.name;
                         a.setAttribute("target", "_blank");
                         li.appendChild(a);
