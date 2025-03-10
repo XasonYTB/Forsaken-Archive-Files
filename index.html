@@ -35,10 +35,10 @@
                         const li = document.createElement("li");
                         const a = document.createElement("a");
                         
-                        // Direct raw GitHub content link
-                        a.href = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/${branch}/${contentsFolder}/${file.name}`;
+                        // Direct link to force download
+                        a.href = `https://github.com/${repoOwner}/${repoName}/raw/${branch}/${contentsFolder}/${file.name}`;
                         a.textContent = file.name;
-                        a.setAttribute("target", "_blank");
+                        a.setAttribute("download", file.name);  // This ensures it triggers a download
                         li.appendChild(a);
                         fileList.appendChild(li);
                     }
